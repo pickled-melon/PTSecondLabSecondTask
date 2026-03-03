@@ -17,13 +17,13 @@ namespace PTSecondLabSecondTask
 
     class Logic
     {
-        public static int GetSumOfNumbersInText(string inputText)
+        public static long GetSumOfNumbersInText(string inputText)
         {
-            int currentNumber = 0;
+            long currentNumber = 0;
             char currentSign = '+';
 
-            int numberMultiplier;
-            int textNumbersSum = 0;
+            long numberMultiplier;
+            long textNumbersSum = 0;
 
             foreach (char c in inputText)
             {
