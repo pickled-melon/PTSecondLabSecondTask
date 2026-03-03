@@ -6,6 +6,13 @@ namespace PTSecondLabSecondTask
         {
             InitializeComponent();
         }
+
+        private void inputTextBox_TextChanged(object sender, EventArgs e)
+        {
+            string inputText = inputTextBox.Text;
+
+            this.numbersSumLabel.Text = $"Результат арифметического выражения: {Logic.GetSumOfNumbersInText(inputText)}";
+        }
     }
 
     class Logic

@@ -28,42 +28,57 @@
         /// </summary>
         private void InitializeComponent()
         {
-            textBox1 = new TextBox();
+            inputTextBox = new TextBox();
             label1 = new Label();
+            numbersSumLabel = new Label();
             SuspendLayout();
             // 
-            // textBox1
+            // inputTextBox
             // 
-            textBox1.Location = new Point(145, 116);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(125, 27);
-            textBox1.TabIndex = 0;
+            inputTextBox.Location = new Point(12, 43);
+            inputTextBox.Multiline = true;
+            inputTextBox.Name = "inputTextBox";
+            inputTextBox.ScrollBars = ScrollBars.Vertical;
+            inputTextBox.Size = new Size(434, 187);
+            inputTextBox.TabIndex = 0;
+            inputTextBox.TextChanged += inputTextBox_TextChanged;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(117, 26);
+            label1.Location = new Point(12, 9);
             label1.Name = "label1";
-            label1.Size = new Size(244, 20);
+            label1.Size = new Size(434, 20);
             label1.TabIndex = 1;
-            label1.Text = "Введите строку следующего вида ";
+            label1.Text = "Введите строку вида d_1±d_2±...±d_n, где d_i — цифры (n > 1)";
+            // 
+            // numbersSumLabel
+            // 
+            numbersSumLabel.AutoSize = true;
+            numbersSumLabel.Location = new Point(12, 248);
+            numbersSumLabel.Name = "numbersSumLabel";
+            numbersSumLabel.Size = new Size(303, 20);
+            numbersSumLabel.TabIndex = 2;
+            numbersSumLabel.Text = "Результат арифметического выражения: 0";
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(457, 284);
+            Controls.Add(numbersSumLabel);
             Controls.Add(label1);
-            Controls.Add(textBox1);
+            Controls.Add(inputTextBox);
             Name = "Form1";
-            Text = "Form1";
+            Text = "Подсчёт суммы чисел в строке";
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private TextBox textBox1;
+        private TextBox inputTextBox;
         private Label label1;
+        private Label numbersSumLabel;
     }
 }
