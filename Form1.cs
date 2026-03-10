@@ -5,13 +5,20 @@ namespace PTSecondLabSecondTask
         public Form1()
         {
             InitializeComponent();
+
+            inputTextBox.Text = Properties.Settings.Default.inputText;
         }
 
         private void inputTextBox_TextChanged(object sender, EventArgs e)
         {
             string inputText = inputTextBox.Text;
 
-            this.numbersSumLabel.Text = $"Результат арифметического выражения: {Logic.GetSumOfNumbersInText(inputText)}";
+            var result = Logic.GetSumOfNumbersInText(inputText);
+
+            Properties.Settings.Default.inputText = inputText;
+            Properties.Settings.Default.Save();
+
+            this.numbersSumLabel.Text = $"Результат арифметического выражения: {result}";
         }
     }
 
